@@ -1,0 +1,32 @@
+[2026-04-17 16:39:29] === 接口预验证启动 ===
+[2026-04-17 16:39:29] Cookie文件存在 (1319 bytes)
+[2026-04-17 16:39:29] 验证登录状态...
+[2026-04-17 16:39:30] WARNING: 登录状态异常，响应: 
+
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta name="aplus-auto-track-config-import" content="off"> 
+  <meta name="aplus-apm-track" content="off"> 
+  <meta name="aplus-core" content="aplus.js">
+[2026-04-17 16:39:30] 检查库存状态...
+[2026-04-17 16:39:30] 库存响应: 
+
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta name="aplus-auto-track-config-import" content="off"> 
+  <meta name="aplus-apm-track" content="off"> 
+  <meta name="aplus-core" content="aplus.js"> 
+  <meta name="aplus-form-track" content="off"> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA
+[2026-04-17 16:39:30] 库存数量: parse_error
+[2026-04-17 16:39:30] WARNING: 库存接口可能已变化，需要手动检查
+[2026-04-17 16:39:30] 验证CSRF Token接口...
+[2026-04-17 16:39:30] CSRF Token接口: 正常 (token: 9803b249-e...)
+[2026-04-17 16:39:30] 验证订单创建接口...
+[2026-04-17 16:39:31] WARNING: 订单创建接口无响应
+[2026-04-17 16:39:31] === 验证完成 ===
+[2026-04-17 16:39:31] 错误数: 3
+[2026-04-17 16:39:31] 存在 3 个问题，建议手动检查

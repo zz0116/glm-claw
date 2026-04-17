@@ -1,0 +1,16 @@
+[2026-04-17 16:41:56] === 阿里百炼 Coding Plan 预验证启动 ===
+[2026-04-17 16:41:56] 浏览器状态文件存在 (1.5M)
+[2026-04-17 16:41:56] 加载浏览器登录状态...
+✓ State path set to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-17 16:42:01] 打开 Coding Plan 页面...
+✓ 大模型服务平台百炼控制台
+  https://bailian.console.aliyun.com/cn-beijing?tab=coding-plan#/efm/coding-plan-index
+[2026-04-17 16:42:08] 页面标题: 大模型服务平台百炼控制台
+[2026-04-17 16:42:08] 页面加载: 成功
+[2026-04-17 16:42:08] 登录状态: 已登录 (zhangyuanzhuo)
+[2026-04-17 16:42:08] 售卖状态: 暂时售罄（符合预期，等待09:30补货）
+✓ Screenshot saved to /home/z/my-project/download/coding-plan-grab/verify_20260417_164208.png
+[2026-04-17 16:42:09] 验证截图已保存: /home/z/my-project/download/coding-plan-grab/verify_20260417_164208.png
+[2026-04-17 16:42:09] === 验证完成 ===
+[2026-04-17 16:42:09] 错误数: 0
+[2026-04-17 16:42:09] 一切正常，等待抢购时间！

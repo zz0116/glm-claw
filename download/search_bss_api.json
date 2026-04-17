@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://www.aliyun.com/benefit/scene/codingplan",
+    "name": "阿里云百炼Coding Plan - AI 编码订阅计划",
+    "snippet": "A：在Coding Plan 页面，点击Coding Plan 的 Api Key 旁边的重置按钮即可。（说明：重置后，您需要将新的 Api Key 更新到所有使用的工具中，否则将会导致工具不可用。 Read more",
+    "host_name": "www.aliyun.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1725450",
+    "name": "阿里云百炼Coding Plan订阅套餐全说明｜购买方式",
+    "snippet": "6 days ago — 简介： 阿里云 百炼 Coding Plan是面向开发者推出的固定月费、多模型合一的AI编程专属订阅服务，可一站式使用多家主流编程大模型，兼容各类主流AI编程工具 ... Read more",
+    "host_name": "developer.aliyun.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.aliyun.com/product/bailian",
+    "name": "大模型服务平台百炼- 大模型应用构建- 阿里云",
+    "snippet": "大模型服务平台 百炼 是企业级的大模型应用开发平台，一站式提供丰富的通义大模型与灵活的智能应用开发工具，助力企业快速落地AI应用，加速业务创新。",
+    "host_name": "www.aliyun.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1716613",
+    "name": "阿里云百炼Coding Plan购买地址，套餐额度选择以及详细使用",
+    "snippet": "14 Mar 2026 — 简介： 阿里云 百炼 Coding Plan提供Lite（40元/月，1.8万次/月）与Pro（200元/月，9万次/月）两种套餐，支持qwen3.5-plus、kimi-k2.5等多模型及图片理解。 Read more",
+    "host_name": "developer.aliyun.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alibabacloud.com/help/zh/model-studio/coding-plan",
+    "name": "Coding Plan概述- 大模型服务平台百炼- 阿里云",
+    "snippet": "27 Mar 2026 — Coding Plan 整合了千问、GLM、Kimi 、MiniMax顶级模型，并兼容主流AI编程工具。其折算成本远低于常规 API 调用，且通过固定月费模式有效防范了欠费风险 ... Read more",
+    "host_name": "www.alibabacloud.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1724180",
+    "name": "阿里云百炼Coding Plan订阅套餐介绍、购买链接及使用注意",
+    "snippet": "阿里云 百炼 Coding Plan是面向AI编程的订阅制服务，开通 百炼 官网：https://t. aliyun.com /U/fPVHqY 现仅售Pro版（200元/月），限量抢购（每日9:30开售）。整合Qwen、Kimi、GLM等 ...",
+    "host_name": "developer.aliyun.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://help.aliyun.com/zh/model-studio/coding-plan",
+    "name": "Coding Plan概述 - 阿里云文档",
+    "snippet": "4 days ago — Coding Plan 整合了千问、GLM、Kimi 、MiniMax顶级模型，并兼容主流AI编程工具。其折算成本远低于常规 API 调用，且通过固定月费模式有效防范了欠费风险 ... Read more",
+    "host_name": "help.aliyun.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://zhuanlan.zhihu.com/p/2011769182103021566",
+    "name": "阿里云百炼Coding Plan火的一塌糊涂！首购低至7.9 元",
+    "snippet": "百炼 Coding Plan 是阿里云专为开发者打造的AI 编码订阅服务。 核心就三点：. 固定月费：新用户首月7.9 元，续费最低5 折起; 高额度：每月 ... Read more",
+    "host_name": "zhuanlan.zhihu.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://help.aliyun.com/zh/model-studio/other-tools-coding-plan",
+    "name": "coding plan接入工具-大模型服务平台百炼(Model Studio)",
+    "snippet": "5 days ago — 启动CoPaw，在左侧设置> 模型页面中，单击 Aliyun Coding Plan的设置，填入Coding Plan 专属 API Key。 Aliyun Coding Plan内置了Coding Plan的Base URL，无需 ... Read more",
+    "host_name": "help.aliyun.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1723990",
+    "name": "阿里云百炼Coding Plan 订阅套餐介绍、购买地址及使用注意",
+    "snippet": "阿里云百炼Coding Plan 是面向AI编程的订阅制服务，开通百炼官网：https://t.aliyun.com/U/fPVHqY 现仅售Pro版（200元/月），限量抢购（每日9:30开售）。整合Qwen、Kimi、GLM等多 ... Read more",
+    "host_name": "developer.aliyun.com",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]

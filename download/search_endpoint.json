@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://www.aliyun.com/benefit/scene/codingplan",
+    "name": "阿里云百炼Coding Plan - AI 编码订阅计划",
+    "snippet": "Qwen Code 轻松配置阿里云百炼 Coding Plan. /01. 一行命令下载Qwen Code. 根据您的操作系统，复制对应的安装命令，在终端中粘贴执行即可完成安装。 Windows. Read more",
+    "host_name": "www.aliyun.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1716613",
+    "name": "阿里云百炼Coding Plan购买地址，套餐额度选择以及详细使用",
+    "snippet": "Mar 14, 2026 — 简介： 阿里云 百炼Coding Plan提供Lite（40元/月，1.8万次/月）与Pro（200元/月，9万次/月）两种套餐，支持qwen3.5-plus、kimi-k2.5等多模型及图片理解。 Read more",
+    "host_name": "developer.aliyun.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1716123",
+    "name": "阿里云百炼Coding Plan订阅套餐介绍、页面地址以及注意事项",
+    "snippet": "Mar 12, 2026 — Pro 版：适合重度开发者/专业团队，首月约¥39.9，额度更充裕，支持更多高算力模型调用。 🔗 二、 购买 与订阅地址. 👉 官方页面： https://www.aliyun.com/ benefit / ... Read more\nMar 12, 2569 BE — 简介： 阿里云 百炼Coding Plan是专为开发者打造的AI编程模型订阅服务，支持Qwen3.5-Plus、GLM-5等多模型自由切换，兼容Cursor等主流工具。 Read more",
+    "host_name": "developer.aliyun.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alibabacloud.com/help/zh/model-studio/coding-plan",
+    "name": "Coding Plan概述- 大模型服务平台百炼- 阿里云",
+    "snippet": "Mar 27, 2569 BE — 步骤一：订阅Coding Plan. 访问Coding Plan 页面，根据实际需求选择并 购买 套餐。 主账号可直接订阅该服务，RAM 子账号需完成以下步骤授权后，再进行订阅。 Read more",
+    "host_name": "www.alibabacloud.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1716129",
+    "name": "阿里云百炼Coding Plan AI 编码订阅计划体验如何？值得买吗？",
+    "snippet": "阿里云 百炼Coding Plan是国内性价比最高、模型生态最丰富的AI编程订阅服务之一：支持Qwen3.5/Max/Coder、Kimi、GLM等多模型自由切换，Lite版首月仅7.9元，Pro版39.9元， ...",
+    "host_name": "developer.aliyun.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://developer.aliyun.com/article/1706561",
+    "name": "【优惠活动】阿里云百炼新推出「AI 编码订阅计划」",
+    "snippet": "Jan 16, 2569 BE — 简介： 阿里云 百炼推出AI编码订阅计划，固定月费含额度，支持Claude Code、Qwen Code等主流工具，默认搭载代码能力强的qwen3-coder-plus模型。 Read more",
+    "host_name": "developer.aliyun.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://help.aliyun.com/zh/model-studio/coding-plan",
+    "name": "Coding Plan概述 - 阿里云文档",
+    "snippet": "4 days ago — 步骤一：订阅Coding Plan. 访问Coding Plan 页面，根据实际需求选择并 购买 套餐。 主账号可直接订阅该服务，RAM 子账号需完成以下步骤授权后，再进行订阅。 Read more",
+    "host_name": "help.aliyun.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  }
+]
