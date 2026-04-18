@@ -1,0 +1,92 @@
+[
+  {
+    "url": "https://blog.csdn.net/fuwuqihd/article/details/160146465",
+    "name": "2026年如何部署OpenClaw？8分钟阿里云新手安装及百炼",
+    "snippet": "4 days ago — 阿里 云 百炼Coding Plan API-Key 获取、配置保姆级教程：. 创建API-Key，推荐访问订阅 阿里 云 百炼Coding Plan ， 阿里 云 百炼Coding Plan 每天两场 抢购 活动，从按 ... Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.csdn.net/fuwuqihd/article/details/159850588",
+    "name": "OpenClaw本地服务器部署教程：2026年配置大模型百炼",
+    "snippet": "3 days ago — 创建API-Key，推荐访问订阅 阿里 云 百炼Coding Plan ， 阿里 云 百炼Coding Plan 每天两场 抢购 活动，从按tokens计费升级为按次收费，可以进一步节省费用！ CodingPlan. Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://gitcode.csdn.net/69c356db0a2f6a37c59a2197.html",
+    "name": "【教程】2026年3月OpenClaw本地6分钟集成及使用零门槛",
+    "snippet": "25 Mar 2026 — 创建API-Key，推荐访问订阅 阿里 云 百炼Coding Plan ， 阿里 云 百炼Coding Plan 每天两场 抢购 活动，从按tokens计费升级为按次收费，可以进一步节省费用！ ... 购买后，在 ... Read more",
+    "host_name": "gitcode.csdn.net",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://gitcode.csdn.net/69d849b70a2f6a37c59e2b14.html",
+    "name": "2026年4月怎么安装OpenClaw？云端5分钟保姆级指南+大模型",
+    "snippet": "购买后，在控制台生成API Key。 · 回到轻量应用服务器-控制台，单击服务器卡片中的实例ID，进入服务器 ... Read more",
+    "host_name": "gitcode.csdn.net",
+    "rank": 3,
+    "date": "Apr 9, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.csdn.net/fuwuqihd/article/details/160005403",
+    "name": "2026年4月OpenClaw怎么安装？本地2分钟超简单步骤+大",
+    "snippet": "1、前往“轻量应用服务器控制台” → 点击装了龙虾镜像的“实例ID” → 点击“应用详情”。 · 2、端口放通： ... Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 4,
+    "date": "Apr 9, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.csdn.net/WTYuong/article/details/159954226",
+    "name": "26年GitHub 上现在比较火的小龙虾Skill，都在往哪儿长？",
+    "snippet": "8 Apr 2026 — ... 阿里 云 百炼 Qwen3.5/Kimi/GLM等，通过CodingPlan订阅（首月7.9元 ... 用OpenClaw 自动 写周报：日均节省2.3小时，完整 Python脚本 开源. 自定义模板 ... Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.csdn.net/Yunyi_Chi/article/details/157694870",
+    "name": "OpenClaw 完全指南：部署你的7×24 小时开源AI 助手原创",
+    "snippet": "3 Feb 2026 — 本文详细介绍OpenClaw 的功能特性、安装部署方法，以及如何在 阿里 云、腾讯云、天翼云等主流云平台上一键部署你的专属AI 助手。 一、OpenClaw 是什么？ 1.1 ... Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.csdn.net/weixin_70573287/article/details/159986371",
+    "name": "阿里云部署OpenClaw 保姆级教程｜轻量服务器镜像一键",
+    "snippet": "7 days ago — 在众多云厂商中， 阿里 云对OpenClaw 的支持最为完善——提供了官方认证的一键部署镜像、无缝集成的 百炼 大模型API，以及弹性可选的服务器规格。 ... 大模型API ... Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://blog.csdn.net/zhurizhe71/article/details/158803278",
+    "name": "全民开始「养虾」，如何快速免费安装OpenClaw？",
+    "snippet": "8 Mar 2026 — 前两天我看评论区，发现很多人把“免费安装OpenClaw”和“买一台现成云服务器”混在一起说。结果新手一上来就被吓住了，以为这玩意要先买VPS、配端口、搞 ... Read more",
+    "host_name": "blog.csdn.net",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://modelers.csdn.net/69a52a907bbde9200b9b1065.html",
+    "name": "whaosoft-143 - 51c大模型~合集191_人工智能 - 魔乐社区",
+    "snippet": "<guideline>：并行产生若干独立 plan （每个 plan 一句战术）；. 2. <step>：每个 plan 独立并行展开具体推理步骤；. 3. <takeaway>：整合与交叉验证，得出最终结论并给出 ... Read more",
+    "host_name": "modelers.csdn.net",
+    "rank": 9,
+    "date": "",
+    "favicon": ""
+  }
+]
