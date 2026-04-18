@@ -1,1 +1,1 @@
-SUCCESS: browser_purchase_triggered
+FAILED: sold_out_until_0419
