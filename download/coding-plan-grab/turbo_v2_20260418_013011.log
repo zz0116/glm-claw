@@ -1,0 +1,33 @@
+[2026-04-18 01:30:11.846] === 阿里百炼 Coding Plan 极速抢购脚本 v2.1 启动 ===
+[2026-04-18 01:30:11.848] 浏览器状态文件存在 (1.5M)
+[2026-04-18 01:30:11.849] 加载浏览器登录状态...
+✓ State path set to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-18 01:30:18.433] 打开百炼 Coding Plan 页面...
+✓ 大模型服务平台百炼控制台
+  https://bailian.console.aliyun.com/cn-beijing?tab=coding-plan#/efm/coding-plan-index
+[2026-04-18 01:30:28.003] 页面内容检查: "buttons_found"
+[2026-04-18 01:30:28.006] 注入极速JavaScript...
+null
+[2026-04-18 01:30:30.398] JS注入状态: "{\"error\":\"not_injected\"}"
+[2026-04-18 01:30:30.400] WARNING: JS注入可能失败！尝试重新注入...
+null
+[2026-04-18 01:30:35.606] 极速监控模式已启动
+[2026-04-18 01:30:38.072] !!! 已跳转到购买确认页面 !!!
+null
+✓ Screenshot saved to /home/z/my-project/download/coding-plan-grab/confirm_page_20260418_013038.png
+[2026-04-18 01:30:40.995] 确认页面等待中 [1/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:43.404] 确认页面等待中 [2/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:45.815] 确认页面等待中 [3/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:48.225] 确认页面等待中 [4/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:50.638] 确认页面等待中 [5/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:53.048] 确认页面等待中 [6/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:55.457] 确认页面等待中 [7/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:30:57.868] 确认页面等待中 [8/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:00.278] 确认页面等待中 [9/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:02.693] 确认页面等待中 [10/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:05.102] 确认页面等待中 [11/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:07.509] 确认页面等待中 [12/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:09.909] 确认页面等待中 [13/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:12.321] 确认页面等待中 [14/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:14.737] 确认页面等待中 [15/15] | clicked:  | URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:31:14.739] 确认页面等待超时，但流程已触发
