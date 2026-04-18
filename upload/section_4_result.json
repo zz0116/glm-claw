@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "选对套餐：低价套餐的配额可能消耗得非常快，用不了多久就没了，性价比并不高。建议根据自己的使用频率，直接选择能满足需求的更高档位套餐，一步到位，避免后悔。\n● 警惕涨价：AI服务的价格可能会随着用户量暴增而快速上涨，早买早享受，晚买可能更贵。\n● 算力紧张：即使抢到了，也可能因为用户太多导致算力紧张，高峰期使用会变卡或“降智”。建议备选一个其他模型服务商的产品，以防万一。\n小红书\n长按识别二维码\n有问题来小红书搜索问一问",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1776525640,
+  "id": "202604182320355888cf03e57e4898",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "202604182320355888cf03e57e4898",
+  "usage": {
+    "completion_tokens": 138,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1717,
+    "prompt_tokens_details": {
+      "cached_tokens": 11
+    },
+    "total_tokens": 1855
+  }
+}

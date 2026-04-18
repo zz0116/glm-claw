@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "问一问\nglm抢购技巧\n✓ ai总结35人真实经验生成 🍔🥩\n想抢到智谱GLM的编程套餐，确实需要点技巧，因为实在是太火了，基本是秒空的状态。下面给你整理了一些实用的抢购策略。\n⚡ 进阶版：脚本抢购\n对于技术大神来说，手动抢购已经不够看了，直接上脚本才是王道。这几乎是目前成功率最高的方法，因为手速拼不过脚本，人肉拼不过机器。\n● 核心原理：使用油猴脚本（Tampermonkey）自",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1776525608,
+  "id": "202604182319580d44e95d533a4372",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "202604182319580d44e95d533a4372",
+  "usage": {
+    "completion_tokens": 129,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1708,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 1837
+  }
+}

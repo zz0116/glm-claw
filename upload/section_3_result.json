@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "基础版：手动抢购\n如果你不想折腾脚本，手动抢购也有一些可以提高成功率的小技巧。\n- 提前准备：一定要提前注册好智谱GLM的账号，并完善好支付方式。把抢购页面链接提前收藏好。\n- 稳定网络：抢购当天，确保你的网络环境稳定快速，可以提前用网线连接或靠近路由器。\n- 设置提醒：用手机和电脑的日历都设置好抢购时间的提前10分钟提醒，掐好点进入页面。\n- 多设备操作：如果条件允许，可以用手机和电脑同时登录账号尝试，增加一点几率。\n抢购前必读",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1776525631,
+  "id": "2026041823202080bde27b0c5d4138",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "2026041823202080bde27b0c5d4138",
+  "usage": {
+    "completion_tokens": 140,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1718,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "total_tokens": 1858
+  }
+}

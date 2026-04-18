@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "动监控页面，一旦库存释放，脚本会自动完成从选择套餐到点击订阅的全过程，速度远超手动操作。\n● 操作步骤\n1. 安装油猴扩展：在你的浏览器（Chrome/Edge/Firefox）应用商店里搜索“Tampermonkey”并安装。\n2. 安装抢购脚本：访问Greasy Fork网站，搜索“GLM Coding Plan 抢购助手”或类似关键词，点击安装。\n3. 开始抢购：打开智谱GLM官网，登录账号，脚本会自动开始工作，你只需要在最后支付环节扫码即可。\n● 注意事项：部分脚本可能会默认带上拼团折扣码，如果你介意这点，需要仔细查看脚本说明或自行修改配置",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1776525617,
+  "id": "202604182320117d3c84af2f59452e",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "202604182320117d3c84af2f59452e",
+  "usage": {
+    "completion_tokens": 154,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1718,
+    "prompt_tokens_details": {
+      "cached_tokens": 5
+    },
+    "total_tokens": 1872
+  }
+}
