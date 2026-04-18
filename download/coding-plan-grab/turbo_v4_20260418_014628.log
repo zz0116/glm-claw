@@ -1,0 +1,18 @@
+[2026-04-18 01:46:28.808] ========================================
+[2026-04-18 01:46:28.809] === 阿里百炼 Coding Plan 极速抢购 v4 ===
+[2026-04-18 01:46:28.810] ========================================
+[2026-04-18 01:46:28.812] 浏览器状态: 1.5M
+[2026-04-18 01:46:28.813] 加载浏览器登录状态...
+✓ State path set to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-18 01:46:35.744] 直接打开购买页: https://common-buy.aliyun.com/coding-plan
+✓ Coding Plan
+  https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:46:42.808] 页面标题: Coding Plan
+✓ Screenshot saved to /home/z/my-project/download/coding-plan-grab/v4_start_20260418_014642.png
+[2026-04-18 01:46:43.107] 注入核心抢购JS...
+[2026-04-18 01:46:43.301] 注入结果: "v4_injected_ok"
+[2026-04-18 01:46:43.303] JS注入成功 ✓
+[2026-04-18 01:46:44.498] JS运行状态: "{\"started\":true,\"phase\":\"monitoring\",\"btnText\":\"Temporarily out of stock, restocking at 04/19 01:30\",\"btnDisabled\":true}"
+[2026-04-18 01:46:44.499] 进入低频监控模式（JS在浏览器内50ms轮询中...）
+[2026-04-18 01:46:44.500] Shell每10秒检查一次状态，不干预点击逻辑
+[2026-04-18 01:46:54.719] 脚本退出，状态: RUNNING

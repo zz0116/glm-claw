@@ -1,44 +1,41 @@
 #!/bin/bash
 # ============================================================
-# 阿里百炼 Coding Plan - 预验证脚本 v2
+# 阿里百炼 Coding Plan - 预验证脚本 v3
 # 
-# 改进：不再关闭浏览器！避免 browser_state 被覆盖为空
-# 改为：打开页面 → 检查状态 → save state → 关闭
+# 关键改进：确保 browser_state 不被 close 操作破坏
+# 流程：备份 → 加载 → 检查 → save → close → 验证state完整性 → 必要时恢复
 # ============================================================
 
 BROWSER_STATE="/home/z/my-project/download/coding-plan-grab/browser_state.json"
 BROWSER_STATE_BACKUP="/home/z/my-project/download/coding-plan-grab/browser_state_backup.json"
 LOG_FILE="/home/z/my-project/download/coding-plan-grab/verify_$(date +%Y%m%d_%H%M%S).log"
 STATUS_FILE="/home/z/my-project/download/coding-plan-grab/purchase_status.txt"
-PAGE_URL="https://common-buy.aliyun.com/?commodityCode=sfm_platform_public_cn"
-PAGE_URL_ALT="https://common-buy.aliyun.com/coding-plan"
+BUY_PAGE="https://common-buy.aliyun.com/coding-plan"
 SCREENSHOT_DIR="/home/z/my-project/download/coding-plan-grab"
 
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
-log "=== 阿里百炼 Coding Plan 预验证 v2 启动 ==="
+log "=== 阿里百炼 Coding Plan 预验证 v3 ==="
 ERRORS=0
 
 # ============================================================
-# 1. 备份现有 browser_state
+# 1. 备份现有 browser_state（关键！）
 # ============================================================
-if [ -f "$BROWSER_STATE" ]; then
-    STATE_SIZE=$(stat -c%s "$BROWSER_STATE" 2>/dev/null || echo 0)
-    log "现有 browser_state: $(du -h "$BROWSER_STATE" | cut -f1) ($STATE_SIZE bytes)"
-    
-    # 备份
-    cp "$BROWSER_STATE" "$BROWSER_STATE_BACKUP"
-    log "已备份到 browser_state_backup.json"
-    
-    if [ "$STATE_SIZE" -lt 100000 ]; then
-        log "WARNING: browser_state 太小，可能已失效"
-        ERRORS=$((ERRORS + 1))
-    fi
-else
-    log "ERROR: browser_state.json 不存在！"
-    echo "VERIFY_FAILED: no browser state" > "$STATUS_FILE"
+if [ ! -f "$BROWSER_STATE" ]; then
+    log "FATAL: browser_state.json 不存在！需要重新登录"
+    echo "VERIFY_FAILED: no_browser_state" > "$STATUS_FILE"
+    exit 1
+fi
+
+STATE_SIZE=$(stat -c%s "$BROWSER_STATE" 2>/dev/null || echo 0)
+cp "$BROWSER_STATE" "$BROWSER_STATE_BACKUP"
+log "browser_state: $(du -h "$BROWSER_STATE" | cut -f1) ($STATE_SIZE bytes) → 已备份"
+
+if [ "$STATE_SIZE" -lt 100000 ]; then
+    log "FATAL: browser_state 太小(${STATE_SIZE}B)，可能已失效，需要重新登录"
+    echo "VERIFY_FAILED: state_too_small" > "$STATUS_FILE"
     exit 1
 fi
 
@@ -49,96 +46,103 @@ log "加载浏览器状态..."
 agent-browser state load "$BROWSER_STATE" 2>&1 | tee -a "$LOG_FILE"
 sleep 2
 
-log "打开购买页..."
-agent-browser open "$PAGE_URL" --timeout 30000 2>&1 | tee -a "$LOG_FILE"
+log "打开购买页: ${BUY_PAGE}"
+agent-browser open "$BUY_PAGE" --timeout 30000 2>&1 | tee -a "$LOG_FILE"
 sleep 5
 
-# 检查URL
-CURRENT_URL=$(agent-browser get url 2>/dev/null)
-log "当前URL: $CURRENT_URL"
-
-if ! echo "$CURRENT_URL" | grep -q "common-buy"; then
-    log "尝试备用URL..."
-    agent-browser open "$PAGE_URL_ALT" --timeout 30000 2>&1 | tee -a "$LOG_FILE"
-    sleep 5
-    CURRENT_URL=$(agent-browser get url 2>/dev/null)
-    log "当前URL: $CURRENT_URL"
-fi
-
 # ============================================================
-# 3. 检查登录状态和页面内容
+# 3. 检查登录和页面状态
 # ============================================================
-page_title=$(agent-browser get title 2>&1)
-log "页面标题: $page_title"
+CURRENT_URL=$(agent-browser get url 2>&1)
+PAGE_TITLE=$(agent-browser get title 2>&1 | tr -d '"')
+log "URL: $CURRENT_URL"
+log "标题: $PAGE_TITLE"
 
-# 截图
 SCREENSHOT_FILE="$SCREENSHOT_DIR/verify_$(date +%Y%m%d_%H%M%S).png"
 agent-browser screenshot "$SCREENSHOT_FILE" 2>&1 | tee -a "$LOG_FILE"
-log "截图: $SCREENSHOT_FILE"
 
-# 检查快照
 SNAP=$(agent-browser snapshot -i 2>&1)
 
 # 检查登录
 if echo "$SNAP" | grep -q "zhangyuan"; then
     log "✓ 已登录 (zhangyuanzhuo)"
 else
-    log "WARNING: 未检测到登录用户名"
+    log "✗ 未检测到登录用户名"
     ERRORS=$((ERRORS + 1))
 fi
 
-# 检查是否在购买页
+# 检查购买页
 if echo "$SNAP" | grep -qi "coding.plan\|subscribe\|model studio"; then
-    log "✓ 购买页加载成功"
+    log "✓ 购买页正常"
 else
-    log "WARNING: 购买页内容异常"
+    log "✗ 购买页异常"
     ERRORS=$((ERRORS + 1))
 fi
 
-# 检查库存状态
-if echo "$SNAP" | grep -qi "out of stock\|售罄\|暂时售罄\|restock"; then
-    RESTOCK_TEXT=$(echo "$SNAP" | grep -i "restock\|售罄\|out of stock" | head -3)
-    log "库存状态: 售罄 - $RESTOCK_TEXT"
+# 检查库存
+if echo "$SNAP" | grep -qi "out of stock\|售罄\|暂时\|restock"; then
+    RESTOCK=$(echo "$SNAP" | grep -i "restock\|售罄\|out of stock" | head -2)
+    log "库存: 售罄 - $RESTOCK"
 elif echo "$SNAP" | grep -qi "subscribe"; then
-    log "!!! 库存状态: 有货！Subscribe按钮可见！"
+    log "!!! 库存: 有货！Subscribe可见！"
     echo "VERIFY_OK: IN_STOCK" > "$STATUS_FILE"
-    ERRORS=$((ERRORS + 1))  # 标记为警告，抢购脚本应该立即启动
 else
-    log "WARNING: 无法确定库存状态"
-    log "快照关键内容:"
-    echo "$SNAP" | head -30 | tee -a "$LOG_FILE"
+    log "? 无法确定库存"
     ERRORS=$((ERRORS + 1))
 fi
 
+# 测试eval是否可用（v4依赖eval注入JS）
+EVAL_TEST=$(agent-browser eval 'document.title' 2>&1 | head -1)
+log "eval测试: $EVAL_TEST"
+if [ -z "$EVAL_TEST" ] || echo "$EVAL_TEST" | grep -qi "null\|error\|undefined"; then
+    log "✗ eval不可用！v4脚本无法工作"
+    ERRORS=$((ERRORS + 1))
+else
+    log "✓ eval正常"
+fi
+
 # ============================================================
-# 4. 关键：保存当前 browser_state（可能已更新session）
+# 4. 保存并安全关闭
 # ============================================================
-log "保存当前浏览器状态（刷新session）..."
+log "保存浏览器状态..."
 agent-browser state save "$BROWSER_STATE" 2>&1 | tee -a "$LOG_FILE"
 
-NEW_STATE_SIZE=$(stat -c%s "$BROWSER_STATE" 2>/dev/null || echo 0)
-log "新 browser_state: $(du -h "$BROWSER_STATE" | cut -f1) ($NEW_STATE_SIZE bytes)"
+# 读取保存后的大小
+SAVED_SIZE=$(stat -c%s "$BROWSER_STATE" 2>/dev/null || echo 0)
+log "保存后state: $(du -h "$BROWSER_STATE" | cut -f1) ($SAVED_SIZE bytes)"
 
-# 如果新 state 太小，恢复备份
-if [ "$NEW_STATE_SIZE" -lt 100000 ] && [ "$STATE_SIZE" -ge 100000 ]; then
-    log "WARNING: 新state太小，恢复备份"
+if [ "$SAVED_SIZE" -lt 100000 ]; then
+    log "WARNING: 保存的state太小，恢复备份"
     cp "$BROWSER_STATE_BACKUP" "$BROWSER_STATE"
+    SAVED_SIZE=$(stat -c%s "$BROWSER_STATE" 2>/dev/null || echo 0)
 fi
 
-# 现在可以安全关闭浏览器
+# 关闭浏览器（这可能覆盖state文件）
 agent-browser close 2>&1 > /dev/null
+sleep 1
+
+# 关键：关闭后再次检查state，如果被破坏就恢复备份
+POST_CLOSE_SIZE=$(stat -c%s "$BROWSER_STATE" 2>/dev/null || echo 0)
+if [ "$POST_CLOSE_SIZE" -lt 100000 ]; then
+    log "WARNING: close操作破坏了state(${POST_CLOSE_SIZE}B)，恢复备份"
+    cp "$BROWSER_STATE_BACKUP" "$BROWSER_STATE"
+    log "已从备份恢复"
+fi
+
+FINAL_SIZE=$(du -h "$BROWSER_STATE" | cut -f1)
+log "最终 browser_state: $FINAL_SIZE"
 
 # ============================================================
 # 5. 汇总
 # ============================================================
-log "=== 验证完成 ==="
-log "错误数: $ERRORS"
-log "browser_state 已保存并验证"
+log "=== 验证完成 | 错误: $ERRORS ==="
 
 if [ $ERRORS -eq 0 ]; then
-    log "一切正常，等待抢购！"
     echo "VERIFY_OK" > "$STATUS_FILE"
+    log "一切正常 ✓"
+elif [ "$(cat "$STATUS_FILE" 2>/dev/null)" = "VERIFY_OK: IN_STOCK" ]; then
+    log "有货！应立即启动抢购"
 else
-    log "存在 $ERRORS 个问题，请查看日志"
-    echo "VERIFY_WARN: $ERRORS issues" > "$STATUS_FILE"
+    echo "VERIFY_WARN: ${ERRORS}_issues" > "$STATUS_FILE"
+    log "存在${ERRORS}个问题"
 fi

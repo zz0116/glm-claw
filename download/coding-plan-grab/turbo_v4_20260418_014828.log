@@ -1,0 +1,24 @@
+[2026-04-18 01:48:29.001] ========================================
+[2026-04-18 01:48:29.002] === 阿里百炼 Coding Plan 极速抢购 v4.1 ===
+[2026-04-18 01:48:29.003] ========================================
+[2026-04-18 01:48:29.005] browser_state: 1.5M
+[2026-04-18 01:48:29.007] 加载浏览器状态...
+✓ State path set to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-18 01:48:35.031] 打开购买页: https://common-buy.aliyun.com/coding-plan
+✓ Coding Plan
+  https://common-buy.aliyun.com/coding-plan
+[2026-04-18 01:48:41.041] 页面标题: Coding Plan
+✓ Screenshot saved to /home/z/my-project/download/coding-plan-grab/v4_start_20260418_014841.png
+[2026-04-18 01:48:41.323] 注入抢购JS...
+[2026-04-18 01:48:41.518] 注入结果: "v4_injected"
+[2026-04-18 01:48:42.715] 初始状态: "{\"started\":true,\"phase\":\"monitoring\",\"clicked\":false,\"purchaseDone\":false,\"payDone\":false,\"clickTime\":null,\"logs\":[\"[0ms] v4.1 monitor started\"],\"startTime\":1776476921512,\"btnText\":\"Temporarily out of stock, restocking at 04/19 01:30\",\"btnDisabled\":true}"
+[2026-04-18 01:48:42.717] ========================================
+[2026-04-18 01:48:42.719] 进入智能监控模式
+[2026-04-18 01:48:42.720] JS在浏览器内50ms轮询 | shell负责reload+重注入
+[2026-04-18 01:48:42.721] 补货目标时间: 09:30:00
+[2026-04-18 01:48:42.722] ========================================
+[2026-04-18 01:48:42.920] Reload | round=1 time=01:48:42 to_restock=27678s interval=30s
+[2026-04-18 01:48:45.696] 重注入成功 ✓
+[2026-04-18 01:49:13.289] Reload | round=6 time=01:49:13 to_restock=27647s interval=30s
+[2026-04-18 01:49:16.200] 重注入成功 ✓
+[2026-04-18 01:49:17.480] [6/360] time=01:49:13 restock_in=27647s btn=?
