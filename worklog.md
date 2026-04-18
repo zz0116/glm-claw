@@ -27,3 +27,23 @@ Stage Summary:
 - Cookie/登录状态有效（browser_state.json 1.5MB）
 - 两个cron任务已设置，将在北京时间 09:20 和 09:28 自动触发
 - 当前时间约 00:42 北京时间，距补货约 8 小时 48 分钟
+---
+Task ID: v4-optimization
+Agent: main
+Task: 优化阿里百炼Coding Plan抢购脚本v4.1
+
+Work Log:
+- 分析v2/v3失败原因：eval在SPA返回null、shell click太慢(200-500ms/次)
+- 测试确认eval在common-buy.aliyun.com页面正常工作（非SPA，服务端渲染）
+- 编写v4.1脚本：JS注入浏览器内50ms轮询，shell只负责reload+重注入+状态上报
+- 智能reload策略：距补货>5min每30s、1-5min每10s、10-60s每3s、-5到10s每1s
+- 修复verify_browser.sh v3：close后检查state完整性，必要时从备份恢复
+- 实测v4.1：JS注入成功、按钮检测正确、reload+重注入正常、无意外退出
+- 设置cron：09:15验证、09:25启动、09:45结果检查
+- 推送到GitHub（已移除硬编码token）
+
+Stage Summary:
+- v4.1核心改进：浏览器内JS 50ms轮询(零shell开销) vs v3的shell click 500ms+
+- 按钮enabled到点击的响应时间：~55ms（vs v3的700ms-1s）
+- 测试通过：eval正常、按钮检测正确、reload+重注入正常
+- 下次补货：2026-04-19 09:30 北京时间
