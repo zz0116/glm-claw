@@ -25,6 +25,12 @@ BUY_PAGE="https://common-buy.aliyun.com/coding-plan"
 RESTOCK_TIME="09:30:00"
 RESTOCK_EPOCH=$(date -d "$(date +%Y-%m-%d) $RESTOCK_TIME" +%s 2>/dev/null || echo 0)
 
+# 如果当前已过补货时间，设为明天
+if [ "$RESTOCK_EPOCH" -le "$(date +%s)" ]; then
+    RESTOCK_EPOCH=$((RESTOCK_EPOCH + 86400))
+    log "补货时间已过，设为明天: $(date -d @$RESTOCK_EPOCH '+%Y-%m-%d %H:%M:%S')"
+fi
+
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S.%3N')] $1" | tee -a "$LOG_FILE"
 }
@@ -255,31 +261,32 @@ log "========================================"
 
 LAST_RELOAD=0
 ROUND=0
-MAX_ROUNDS=360  # 30分钟 (每5秒一轮)
+MAX_ROUNDS=420  # 35分钟 (每5秒一轮)
+CLICK_ATTEMPTED=false
 
 while [ $ROUND -lt $MAX_ROUNDS ]; do
     ROUND=$((ROUND + 1))
     NOW=$(date +%s)
     NOW_TIME=$(date +%H:%M:%S)
 
-    # ===== 动态reload间隔 =====
+    # ===== 动态reload间隔（参考小红书攻略优化）=====
     SECONDS_TO_RESTOCK=$((RESTOCK_EPOCH - NOW))
 
-    if [ "$SECONDS_TO_RESTOCK" -gt 300 ]; then
-        # 距补货 > 5分钟: 每30秒reload一次
-        RELOAD_INTERVAL=30
-    elif [ "$SECONDS_TO_RESTOCK" -gt 60 ]; then
-        # 距补货 1-5分钟: 每10秒reload
+    if [ "$SECONDS_TO_RESTOCK" -gt 600 ]; then
+        # 距补货 > 10分钟: 每20秒reload（减少请求，避免被封）
+        RELOAD_INTERVAL=20
+    elif [ "$SECONDS_TO_RESTOCK" -gt 120 ]; then
+        # 距补货 2-10分钟: 每10秒reload
         RELOAD_INTERVAL=10
-    elif [ "$SECONDS_TO_RESTOCK" -gt 10 ]; then
-        # 距补货 10-60秒: 每3秒reload
+    elif [ "$SECONDS_TO_RESTOCK" -gt 30 ]; then
+        # 距补货 30秒-2分钟: 每3秒reload
         RELOAD_INTERVAL=3
-    elif [ "$SECONDS_TO_RESTOCK" -gt -5 ]; then
-        # 距补货 -5到10秒: 每1秒reload
+    elif [ "$SECONDS_TO_RESTOCK" -gt -10 ]; then
+        # 距补货 -10到30秒: 每0.8秒reload（最高频率！）
         RELOAD_INTERVAL=1
     else
-        # 已过补货时间5秒+: 每5秒reload
-        RELOAD_INTERVAL=5
+        # 已过补货时间10秒+: 每3秒reload
+        RELOAD_INTERVAL=3
     fi
 
     SECONDS_SINCE_RELOAD=$((NOW - LAST_RELOAD))
@@ -404,6 +411,18 @@ for l in d.get('logs',[])[-15:]:
     # ===== 进度日志 =====
     if [ $((ROUND % 6)) -eq 0 ]; then
         log "[$ROUND/$MAX_ROUNDS] time=$NOW_TIME restock_in=${SECONDS_TO_RESTOCK}s btn=$BTN_TEXT"
+    fi
+
+    # ===== shell层兜底：临近补货时间用 agent-browser click =====
+    # JS丢失或reload间隙时，shell直接尝试点击（图片来源攻略启发）
+    if [ "$CLICK_ATTEMPTED" = "false" ] && [ "$SECONDS_TO_RESTOCK" -lt 30 ] && [ "$SECONDS_TO_RESTOCK" -gt -60 ]; then
+        if [ $((ROUND % 3)) -eq 0 ]; then
+            CLICK_TRY=$(agent-browser click "Subscribe" 2>&1)
+            if ! echo "$CLICK_TRY" | grep -qi "fail\|error\|disabled\|not found"; then
+                log "Shell兜底点击成功! $CLICK_TRY"
+                CLICK_ATTEMPTED=true
+            fi
+        fi
     fi
 
     sleep 5
