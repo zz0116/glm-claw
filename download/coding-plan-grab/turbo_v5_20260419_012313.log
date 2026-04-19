@@ -1,0 +1,23 @@
+[2026-04-19 01:23:13.285] ========================================
+[2026-04-19 01:23:13.287] === 阿里百炼 Coding Plan 极速抢购 v5 ===
+[2026-04-19 01:23:13.288] === 多标签页并发 | 30ms轮询 | 预加载 ===
+[2026-04-19 01:23:13.290] ========================================
+[2026-04-19 01:23:13.293] browser_state: 588K
+[2026-04-19 01:23:13.294] 加载浏览器状态...
+✓ State path set to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-19 01:23:18.488] 打开主购买页: https://common-buy.aliyun.com/coding-plan
+✓ Coding Plan
+  https://common-buy.aliyun.com/coding-plan
+[2026-04-19 01:23:23.265] 页面标题: Coding Plan
+✓ Screenshot saved to /home/z/my-project/download/coding-plan-grab/v5_start_20260419_012323.png
+[2026-04-19 01:23:23.562] 注入抢购JS到tab0...
+[2026-04-19 01:23:23.943] 注入结果: "v5_injected_tab0"
+[2026-04-19 01:23:25.138] 初始状态: "{\"tabId\":\"tab0\",\"started\":true,\"phase\":\"monitoring\",\"clicked\":false,\"clickTime\":null,\"logs\":[\"[0ms] [tab0] v5 monitor started | readyState=complete | url=https://common-buy.aliyun.com/coding-plan\"],\"startTime\":1776561803938,\"btnText\":\"Temporarily out of stock, restocking at 04/19 01:30\",\"btnDisabled\":true,\"readyState\":\"complete\",\"url\":\"https://common-buy.aliyun.com/coding-plan\"}"
+[2026-04-19 01:23:25.141] ========================================
+[2026-04-19 01:23:25.142] 进入极速监控模式
+[2026-04-19 01:23:25.144] JS 30ms轮询 | 智能reload + 立即重注入
+[2026-04-19 01:23:25.146] 补货目标时间: 09:30:00 (2026-04-19 09:30:00)
+[2026-04-19 01:23:25.148] ========================================
+[2026-04-19 01:23:25.349] Reload | round=1 time=01:23:25 to_restock=29195s interval=30s
+[2026-04-19 01:23:26.723] 重注入成功 ✓
+[2026-04-19 01:23:38.566] [10/1200] time=01:23:38 restock_in=29182s btn=? phase=?
