@@ -1,0 +1,22 @@
+[2026-04-19 01:15:17] === 阿里百炼 Coding Plan 预验证 v3 ===
+[2026-04-19 01:15:17] browser_state: 1.5M (1474253 bytes) → 已备份
+[2026-04-19 01:15:17] 加载浏览器状态...
+✓ State path set to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-19 01:15:25] 打开购买页: https://common-buy.aliyun.com/coding-plan
+✓ Coding Plan
+  https://common-buy.aliyun.com/coding-plan
+[2026-04-19 01:15:32] URL: https://common-buy.aliyun.com/coding-plan
+[2026-04-19 01:15:32] 标题: Coding Plan
+✓ Screenshot saved to /home/z/my-project/download/coding-plan-grab/verify_20260419_011532.png
+[2026-04-19 01:15:32] ✓ 已登录 (zhangyuanzhuo)
+[2026-04-19 01:15:32] ✓ 购买页正常
+[2026-04-19 01:15:32] 库存: 售罄 -   - generic "Temporarily out of stock, restocking at 04/19 01:30" [ref=e15] clickable [onclick]
+    - button "Temporarily out of stock, restocking at 04/19 01:30" [disabled, ref=e23]
+[2026-04-19 01:15:32] eval测试: "Coding Plan"
+[2026-04-19 01:15:32] ✓ eval正常
+[2026-04-19 01:15:32] 保存浏览器状态...
+✓ State saved to /home/z/my-project/download/coding-plan-grab/browser_state.json
+[2026-04-19 01:15:33] 保存后state: 588K (599169 bytes)
+[2026-04-19 01:15:34] 最终 browser_state: 588K
+[2026-04-19 01:15:34] === 验证完成 | 错误: 0 ===
+[2026-04-19 01:15:34] 一切正常 ✓
